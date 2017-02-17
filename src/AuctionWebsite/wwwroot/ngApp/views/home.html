@@ -1,0 +1,14 @@
+<h2>Home</h2>
+<h3>Items</h3>
+<form ng-submit="controller.postItem(item)">
+    <input placeholder="Name" ng-model="item.name" />
+    <input placeholder="Description" ng-model="item.description" />
+    <input placeholder="Starting Bid" type="number" ng-model="item.minBid" />
+    <input placeholder="Max Bids Allowed" type="number" ng-model="item.numberOfBids" />
+    <input type="submit" />
+</form>
+<ul>
+    <li ng-repeat="item in controller.items">
+        <a ui-sref="details({id: item.id})">{{item.name}}</a>
+    </li>
+</ul>
